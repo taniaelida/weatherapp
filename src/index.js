@@ -49,6 +49,11 @@ function magicWeather(response) {
   );
   document.querySelector("#humedad").innerHTML = response.data.main.humidity;
   document.querySelector("#viento").innerHTML = response.data.wind.speed;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function search(event) {
