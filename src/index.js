@@ -54,6 +54,7 @@ function magicWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 function search(event) {
@@ -69,9 +70,11 @@ form.addEventListener("submit", search);
 
 function farenheitDisplay(event) {
   event.preventDefault();
-  let farenheitTemperature = (cantidad.innerHTML * 9) / 5 + 32;
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   cantidad.innerHTML = Math.round(farenheitTemperature);
 }
+
+let celsiusTemperature = null;
 
 let farenheitLink = document.querySelector("#farenheit");
 farenheitLink.addEventListener("click", farenheitDisplay);
