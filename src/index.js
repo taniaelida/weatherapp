@@ -68,6 +68,11 @@ function search(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
+function celsiusDisplay(event) {
+  event.preventDefault();
+  cantidad.innerHTML = Math.round(celsiusTemperature);
+}
+
 function farenheitDisplay(event) {
   event.preventDefault();
   let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
@@ -75,6 +80,9 @@ function farenheitDisplay(event) {
 }
 
 let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", celsiusDisplay);
 
 let farenheitLink = document.querySelector("#farenheit");
 farenheitLink.addEventListener("click", farenheitDisplay);

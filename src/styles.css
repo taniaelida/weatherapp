@@ -66,11 +66,14 @@ button:hover {
   font-size: 45px;
   margin-left: 60px;
 }
-.medidas,
+#celsius,
 #farenheit {
   font-size: 13px;
   position: relative;
   top: -20px;
+  color: white;
+  cursor: default;
+  text-decoration: none;
 }
 
 .emoji {
