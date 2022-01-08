@@ -66,3 +66,12 @@ function search(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
+
+function farenheitDisplay(event) {
+  event.preventDefault();
+  let farenheitTemperature = (cantidad.innerHTML * 9) / 5 + 32;
+  cantidad.innerHTML = Math.round(farenheitTemperature);
+}
+
+let farenheitLink = document.querySelector("#farenheit");
+farenheitLink.addEventListener("click", farenheitDisplay);

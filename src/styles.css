@@ -67,7 +67,7 @@ button:hover {
   margin-left: 60px;
 }
 .medidas,
-.farenheit {
+#farenheit {
   font-size: 13px;
   position: relative;
   top: -20px;
