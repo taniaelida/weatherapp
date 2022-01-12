@@ -38,6 +38,33 @@ let month = months[now.getMonth()];
 
 h6.innerHTML = `${day} ${month} ${date}, ${year} </br>  ${hours} : ${minutes}`;
 
+function dispalyForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="date-Forecast">${day}</div>
+                        <img 
+            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+            alt=""
+            width="30">
+            <div class=weatherForecastTemperature>
+            <span class="forecastMax">18</span>
+            <span class="forecastMin">12 </span> 
+            </div> 
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function magicWeather(response) {
   console.log(response.data.weather[0].main);
   document.querySelector("h5").innerHTML = response.data.name;
@@ -86,3 +113,5 @@ celsiusLink.addEventListener("click", celsiusDisplay);
 
 let farenheitLink = document.querySelector("#farenheit");
 farenheitLink.addEventListener("click", farenheitDisplay);
+
+dispalyForecast();
