@@ -1,12 +1,12 @@
 .container {
   width: 560px;
-  height: 640px;
+  height: 440px;
 }
 
 .weather-app {
   border: 1px solid;
   width: 460px;
-  height: 630px;
+  height: 430px;
   font-family: "Roboto", sans-serif;
   background: linear-gradient(
     109.6deg,
@@ -102,4 +102,5 @@ li {
 .weatherForecast {
   font-size: 13px;
   text-align: center;
+  margin-left: 40px;
 }
